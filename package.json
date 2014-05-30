@@ -1,10 +1,10 @@
 {
-  "name": "the-new-sandbox",
+  "name": "Apostrophe-Help",
   "version": "0.5.0",
   "description": "Sandbox site featuring typical Apostrophe features",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "nodemon app.js || node app.js"
   },
   "repository": {
     "type": "git",
