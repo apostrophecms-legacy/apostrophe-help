@@ -1,0 +1,51 @@
+@root-font-size: 18px;
+body, html
+{
+  font-size: @root-font-size;
+}
+
+.font-size(@rem)
+{
+  font-size: round(@rem * @root-font-size) * 1px;
+  font-size: @rem * 1rem;
+}
+
+.line-height(@rem)
+{
+  line-height: round(@rem * @root-font-size) * 1px;
+  line-height: @rem * 1rem;
+}
+
+// ------------------------------------------------
+
+.Alegraya() {
+  font-family: "alegreyaregular";
+}
+.Alegraya(@size) {
+  font-family: "alegreyaregular";
+  .font-size(@size);
+}
+
+.AlegrayaItalic() {
+  font-family: "alegreyaitalic";
+}
+.AlegrayaItalic(@size) {
+  font-family: "alegreyaitalic";
+  .font-size(@size);
+}
+
+.AlegrayaBold() {
+  font-family: "alegreya_scbold";
+}
+.AlegrayaBold(@size) {
+  font-family: "alegreya_scbold";
+  .font-size(@size);
+}
+
+.AlegrayaBoldItalic() {
+  font-family: "alegreya_scbold_italic";
+}
+.AlegrayaBoldItalic(@size) {
+  font-family: "alegreya_scbold_italic";
+  .font-size(@size);
+}
