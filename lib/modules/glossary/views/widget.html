@@ -1,0 +1,10 @@
+<div class="glossary-widget">
+  <div class="glossary-title red">VIEW GLOSSARY</div>
+  <ul class="glossary-list closed">
+    {% for entry in item._snippets %}
+      <li><strong class="red">{{ entry.title }}</strong>: {{ entry.description }}</li>
+    {% endfor %}
+  </ul>
+  <div class="spacer"></div>
+  <div class="toothy-border"></div>
+</div>

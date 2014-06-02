@@ -4,3 +4,36 @@ h3 { .font-size(2);   }
 h4 { .font-size(1.8); }
 h5 { .font-size(1.6); }
 h6 { .font-size(1.2); }
+
+h1,h2,h3,h4,h5,h6
+{
+  .GandhiBold();
+  margin-bottom: 0.5em;
+}
+
+body
+{
+  .Gandhi(1);
+  color: @dark;
+}
+
+p
+{
+  .Gandhi(1);
+  .line-height(1.5);
+}
+
+b, strong
+{
+  .GandhiBold();
+}
+
+i, em
+{
+  .GandhiItalic();
+}
+
+.red
+{
+  color: @red;
+}

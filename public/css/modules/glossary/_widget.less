@@ -1,0 +1,52 @@
+.glossary
+{
+  margin-bottom: 1em;
+
+  .spacer
+  {
+    height: 1em;
+  }
+}
+
+.glossary-title
+{
+  &::before
+  {
+    .inline-block(middle);
+    content: '';
+    position: relative;
+    width: 36px;
+    height: 30px;
+    margin-right: 1em;
+    background-image: url('/images/book.svg');
+  }
+
+  .transition(opacity @time);
+  .Gandhi(0.8);
+
+  &:hover
+  {
+    opacity: 0.5;
+    cursor: pointer;
+  }
+}
+
+.glossary-list
+{
+  padding: 1em 0;
+
+  .transition(max-height 0.5s, padding @time;);
+  max-height: 600px;
+  overflow: hidden;
+
+  &.closed
+  {
+    max-height: 0;
+    padding: 0;
+  }
+
+  li
+  {
+    text-align: left;
+  }
+}

@@ -5,7 +5,7 @@ var site = require('apostrophe-site')({
   shortName: 'apostrophe-help',
   hostName: 'apostrophe-help',
   title: 'Apostrophe Help',
-  sessionSecret: 'apostrophe sandbox demo party',
+  sessionSecret: 'apostrophe help is awesome',
   adminPassword: 'demo',
 
   // Give users a chance to log in if they attempt to visit a page
@@ -72,25 +72,26 @@ var site = require('apostrophe-site')({
   modules: {
     // Styles required by the new editor, must go FIRST
     'apostrophe-ui-2': {},
-    'apostrophe-blog-2': {
-      pieceLabel: 'Article'
-    },
-    'apostrophe-people': {
-      email: {
-        from: 'Tommy Boutell <tom@example.com>'
-      }
-    },
+    'apostrophe-people': {},
     'apostrophe-groups': {},
-    'apostrophe-map':      {},
     'glossary': {
       extend: 'apostrophe-snippets',
       name: 'glossary',
-      instance: 'entry'
+      label: 'Glossary',
+      instance: 'entry',
+      instanceLabel: 'Entry',
+      removeFields: ['thumbnail', 'hideTitle', 'body'],
+      addFields: [
+        {
+          name: 'description',
+          type: 'string',
+          textarea: true,
+          label: 'Description'
+        }
+      ]
     },
     // The new editor
-    'apostrophe-editor-2': {
-
-    },
+    'apostrophe-editor-2': {},
     'apostrophe-blocks': {
       types: [
         {
@@ -102,8 +103,7 @@ var site = require('apostrophe-site')({
           label: 'Two Column'
         }
       ]
-    },
-    'apostrophe-redirects': {}
+    }
   },
 
   // These are assets we want to push to the browser.
