@@ -12,9 +12,7 @@ var site = require('apostrophe-site')({
   // which requires login
   secondChanceLogin: true,
 
-  locals: {
-    loginButton: true
-  },
+  locals: require('./lib/locals/index'),
 
   lockups: {
     left: {
@@ -55,14 +53,8 @@ var site = require('apostrophe-site')({
   pages: {
     types: [
       { name: 'default', label: 'Default (Two Column)' },
-      { name: 'onecolumn', label: 'One Column' },
-      { name: 'blocks', label: 'Blocks' },
-      { name: 'marquee', label: 'Marquee' },
-      { name: 'home', label: 'Home Page' },
-      { name: 'blog', label: 'Blog' },
-      { name: 'map', label: 'Map' },
-      { name: 'groups', label: 'Directory' },
-      { name: 'company', label: 'Company' }
+      { name: 'glossary', label: 'Glossary Index' },
+      { name: 'home', label: 'Home Page' }
     ]
   },
 
@@ -101,6 +93,27 @@ var site = require('apostrophe-site')({
         {
           name: 'two',
           label: 'Two Column'
+        }
+      ]
+    },
+    'apostrophe-schema-widgets': {
+      widgets: [
+        {
+          name: 'proTip',
+          label: 'Pro Tip',
+          instructions: 'Lay down your pro tip.',
+          schema: [
+            {
+              name: 'body',
+              type: 'area',
+              label: 'Description',
+              required: true,
+              options: {
+                controls: [ 'style', 'bold', 'italic', 'createLink', 'unlink' ],
+                styles: [ { value: 'p', label: 'Normal' }, { value: 'h5', label: 'Title' } ]
+              }
+            }
+          ]
         }
       ]
     }

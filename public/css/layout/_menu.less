@@ -8,6 +8,12 @@
 
   .font-size(0.8);
   text-transform: uppercase;
+
+  a
+  {
+    .GandhiBold();
+    color: @dark;
+  }
 }
 
 .breadcrumbs
@@ -19,4 +25,16 @@
 {
   float: right;
   .inline-block(top);
+}
+
+.nav-item
+{
+  .inline-block(top);
+  margin-left: 2em;
+
+  &.highlight a
+  {
+    background-color: @red;
+    color: white;
+  }
 }

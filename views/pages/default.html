@@ -5,15 +5,37 @@
 {# be sure to call super() so that any pages inheriting this one will be appending classes, not overriding them. #}
 {% block bodyClass %}{{ super() }} default-page{% endblock %}
 
+{% block headerTitle %}
+<h3>{{ page.title }}</h3>
+{% endblock %}
+
+{% block breadcrumbs %}
+  {% for relative in page.ancestors -%}
+    {{ pageLink(relative) }}&nbsp;&gt;&nbsp;
+  {%- endfor -%}
+  {{ pageLink(page) }}
+{% endblock %}
+
 {% block mainContent %}
   <div class="glossary">
     {{ aposSingleton(page, 'glossaryWidget', 'glossary') }}
   </div>
   {{ aposArea(page, 'main', {
-    controls: [ 'style', 'bold', 'italic', 'createLink', 'unlink', 'slideshow' ],
+    controls: [ 'style', 'bold', 'italic', 'createLink', 'unlink', 'slideshow', 'proTip' ],
     styles: [
       { value: 'p', label: 'Normal' },
       { value: 'h4', label: 'Title' }
     ]
   }) }}
+  <div class="other-articles">
+    {% if page.children.length %}
+      <div class="toothy-border"></div>
+      <ul class="article-list">
+        <li>Articles in this section:</li>
+        {% for item in page.children %}
+          <li class="article-link"><a href="{{ item.url }}">{{ item.title }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
 {% endblock %}

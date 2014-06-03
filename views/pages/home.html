@@ -3,10 +3,20 @@
 {% block bodyClass %}{{ super() }} home{% endblock %}
 
 {# breadcrumbs are excluded from the homepage #}
-{#{% block breadcrumbs %}
-{% endblock %}#}
+{% block breadcrumbs %}<strong>Apostrophe 2 Help</strong>{% endblock %}
 
 {% block mainContent %}
-{{ aposArea(page, 'main') }}
+  {{ aposArea(page, 'main', {
+    controls: [ 'style', 'bold', 'italic', 'createLink', 'unlink', 'slideshow' ],
+    styles: [
+      { value: 'p', label: 'Normal' },
+      { value: 'h4', label: 'Title' }
+    ]
+  }) }}
 <hr />
+<ul class="article-list">
+  {% for item in page.children %}
+    <li class="article-link"><a href="{{ item.url }}">{{ item.title }}</a></li>
+  {% endfor %}
+</ul>
 {% endblock %}

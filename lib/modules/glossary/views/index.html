@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block bodyClass %}{{ super() }} glossary-page{% endblock %}
+
+{% block breadcrumbs %}
+  {% for relative in page.ancestors -%}
+    {{ pageLink(relative) }}&nbsp;&gt;&nbsp;
+  {%- endfor -%}
+  {{ pageLink(page) }}
+{% endblock %}
+
+{% block mainContent %}
+  <h3 class="text-align-center glossary-title">Glossary of Terms</h3>
+  <ul class="glossary-terms">
+    {% for item in items %}
+      <li><span class="term-title red">{{ item.title }}</span>: {{ item.description }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

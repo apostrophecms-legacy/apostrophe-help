@@ -14,7 +14,7 @@
 {% block header %}
   <div class="block header">
     <div class="inner">
-      <div class="logo centered"></div>
+      <a href="/" class="logo centered"></a>
       {% block headerTitle %}
         <h3>Apostrophe Help</h3>
       {% endblock %}
@@ -24,8 +24,12 @@
     <div class="block">
       <div class="inner">
         <div class="menu clearfix">
-          <div class="breadcrumbs">{% block breadcrumbs %}breadcrumbs{% endblock %}</div>
-          <div class="nav">pages</div>
+          <div class="breadcrumbs">{% block breadcrumbs %}HOME{% endblock %}</div>
+          <ul class="nav">
+          {% for item in page.tabs %}
+            <li class="nav-item {% if pageInAncestors(item, page.ancestors) or page.slug == item.slug %}highlight{% endif %}"><a href="{{ item.url }}">{{ item.title }}</a></li>
+          {% endfor %}
+          </ul>
         </div>
       </div>
     </div>
@@ -47,7 +51,9 @@
 {% block footer %}
   <footer class="footer block">
     {% block footerContent %}
-      <div class="inner"></div>
+      <div class="inner">
+        {{ aposArea(global, 'footer', { controls: [ 'style', 'bold', 'italic', 'createLink', 'unlink' ] }) }}
+      </div>
     {% endblock %}
   </footer>
 {% endblock %}

@@ -1,0 +1,7 @@
+{% block items %}
+  <ul class="slideshow-grid">
+    {% for file in item._items %}
+      <img class="grid-image" {% if file.credit == '@2x' %}width="{{ file.width / 2 }}" height="{{ file.height / 2 }}"{% endif %} src="{{ aposFilePath(file, { size: size, crop: item.crop }) }}" />
+    {% endfor %}
+  </ul>
+{% endblock %}

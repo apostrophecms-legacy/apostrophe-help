@@ -29,6 +29,8 @@
     "apostrophe-blocks": "0.5.x",
     "apostrophe-fancy-page": "0.5.x",
     "optimist": "~0.6.0",
-    "apostrophe-redirects": "~0.5.1"
+    "apostrophe-redirects": "~0.5.1",
+    "apostrophe-schema-widgets": "0.5.x",
+    "lodash": "2.4.1"
   }
 }
