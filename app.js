@@ -6,7 +6,7 @@ var site = require('apostrophe-site')({
   hostName: 'apostrophe-help',
   title: 'Apostrophe Help',
   sessionSecret: 'apostrophe help is awesome',
-  adminPassword: 'demo',
+  adminPassword: 'avocado pretzel',
 
   // Give users a chance to log in if they attempt to visit a page
   // which requires login
