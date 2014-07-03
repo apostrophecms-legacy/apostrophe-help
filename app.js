@@ -72,6 +72,7 @@ var site = require('apostrophe-site')({
       label: 'Glossary',
       instance: 'entry',
       instanceLabel: 'Entry',
+      perPage: 1000,
       removeFields: ['thumbnail', 'hideTitle', 'body'],
       addFields: [
         {
