@@ -7,16 +7,31 @@
 
 {% block mainContent %}
   {{ aposArea(page, 'main', {
-    controls: [ 'style', 'bold', 'italic', 'createLink', 'unlink', 'slideshow' ],
-    styles: [
-      { value: 'p', label: 'Normal' },
-      { value: 'h4', label: 'Title' }
-    ]
-  }) }}
-<hr />
-<ul class="article-list">
-  {% for item in page.children %}
-    <li class="article-link"><a href="{{ item.url }}">{{ item.title }}</a></li>
-  {% endfor %}
-</ul>
+      controls: [ 'style', 'bold', 'italic', 'createLink', 'unlink'],
+      styles: [
+        { value: 'p', label: 'Normal' },
+        { value: 'h4', label: 'Title' }
+      ]
+    }) }}
+{% endblock %}
+{% block extraContent %}
+  <div class="block extra-content">
+    <div class="inner">
+      <form class="" name="faq">
+        <fieldset  data-name="Question">
+          <label><h4>What is a question you've asked when using Apostrophe?</h4></label>
+          <p class="label-help">For example, "How do you move a blog post?"</p>
+          <textarea name="title" rows="5"></textarea>
+        </fieldset>
+        <fieldset  data-name="Question">
+          <label><h4>Email Address</h4></label>
+          <p class="label-help">If you include your email address, we'll let you know when the FAQ has been published!</p>
+          <input name="title" type="text">
+        </fieldset>
+        <fieldset data-name="Submit">
+          <input name="submit" type="submit" value="Send us your Question">
+        </fieldset>
+      </form>
+    </div>
+  </div>
 {% endblock %}

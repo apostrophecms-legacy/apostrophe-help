@@ -1,0 +1,59 @@
+/* ---------------------------------------------------------------*/
+/* ---------------------------------------------------------------*/
+// The Point of this file is to house the styles for the question.
+/* ---------------------------------------------------------------*/
+/* ---------------------------------------------------------------*/
+
+.home
+{
+  .main-content
+  {
+    background: @red;
+    color: white;
+  }
+  .main-content,
+  .extra-content
+  {
+    padding: 60px 3%;
+  }
+
+  //special styles for the form.
+  input,
+  textarea
+  {
+    -webkit-box-sizing: border-box;
+  	-moz-box-sizing: border-box;
+  	box-sizing: border-box;
+    width: 300px;
+    max-width: 100%;
+    font-size: 18px;
+    line-height: 1.4;
+    padding: 10px;
+    outline: @red;
+  }
+  textarea
+  {
+    width: 100%;
+  }
+  input[type="submit"]
+  {
+    background: @red;
+    color: white;
+    .GandhiBold();
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: none;
+    outline: none;
+    border-bottom: darken(@red, 10%) solid 3px;
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    &:hover
+    {
+      background: darken(@red, 10%);
+      border-bottom: @red solid 3px;
+    }
+
+  }
+
+}
